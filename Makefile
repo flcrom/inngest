@@ -92,6 +92,34 @@ docs: ## Generate OpenAPI documentation
 	@echo "Converting OpenAPI v2 to v3..."
 	go run ./tools/convert-openapi docs/openapi/v2 docs/openapi/v3
 
+.PHONY: api-docs
+api-docs: docs ## Generate the public OpenAPI specs and API docs pages
+	pnpm --dir docs/api-docs generate
+
+.PHONY: api-docs-check
+api-docs-check: api-docs ## Check that committed API docs artifacts are current
+	@if test -n "$$(git status --short --untracked-files=all -- \
+		docs/api_v2_examples.json \
+		docs/api-docs/public/api-specs \
+		docs/api-docs/content/docs/v1 \
+		docs/api-docs/content/docs/v2 \
+		':(exclude)docs/api-docs/content/docs/v1/index.mdx')"; then \
+		echo "Generated API docs are out of date. Run 'make api-docs' and commit the result."; \
+		git diff HEAD -- \
+			docs/api_v2_examples.json \
+			docs/api-docs/public/api-specs \
+			docs/api-docs/content/docs/v1 \
+			docs/api-docs/content/docs/v2 \
+			':(exclude)docs/api-docs/content/docs/v1/index.mdx'; \
+		git status --short --untracked-files=all -- \
+			docs/api_v2_examples.json \
+			docs/api-docs/public/api-specs \
+			docs/api-docs/content/docs/v1 \
+			docs/api-docs/content/docs/v2 \
+			':(exclude)docs/api-docs/content/docs/v1/index.mdx'; \
+		exit 1; \
+	fi
+
 .PHONY: build
 build: docs ## Build release binaries
 	goreleaser build

@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite dev",
-    "build": "pnpm generate && tsc --noEmit && vite build --mode=production",
+    "build": "tsc --noEmit && vite build --mode=production",
     "generate": "tsx scripts/generate-docs.ts",
     "preview": "vite preview",
     "type-check": "tsc --noEmit",

@@ -1,0 +1,65 @@
+name: API Docs
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/api_docs.yml"
+      - "Makefile"
+      - "docs/api-docs/**"
+      - "docs/api_v2_examples.json"
+      - "docs/openapi/v3/api/v1/spec.yaml"
+      - "go.mod"
+      - "go.sum"
+      - "proto/api/v2/**"
+      - "proto/third_party/**"
+      - "tools/convert-openapi/**"
+  pull_request:
+    paths:
+      - ".github/workflows/api_docs.yml"
+      - "Makefile"
+      - "docs/api-docs/**"
+      - "docs/api_v2_examples.json"
+      - "docs/openapi/v3/api/v1/spec.yaml"
+      - "go.mod"
+      - "go.sum"
+      - "proto/api/v2/**"
+      - "proto/third_party/**"
+      - "tools/convert-openapi/**"
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    name: Generated artifacts and build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          submodules: true
+
+      # Provides Go, protoc, and the pinned protoc-gen-openapiv2 fork.
+      - uses: DeterminateSystems/nix-installer-action@v22
+      - uses: nicknovitski/nix-develop@v1.2.1
+
+      # Run after nix-develop so Node 24 takes precedence over Nix's Node 22.
+      - uses: pnpm/action-setup@v4
+        with:
+          version: "10.18.2"
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+          cache: pnpm
+          cache-dependency-path: docs/api-docs/pnpm-lock.yaml
+
+      - name: Install dependencies
+        working-directory: docs/api-docs
+        run: pnpm install --frozen-lockfile
+
+      - name: Check generated API docs
+        run: make api-docs-check
+
+      - name: Build API docs
+        working-directory: docs/api-docs
+        run: pnpm build
