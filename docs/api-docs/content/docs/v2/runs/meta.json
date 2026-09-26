@@ -2,8 +2,13 @@
   "title": "Runs",
   "description": "Inspect function runs",
   "pages": [
+    "ListFunctionRuns",
     "GetEventRuns",
+    "ListRuns",
     "GetFunctionRun",
+    "CancelRun",
+    "Rerun",
+    "CreateScore",
     "GetFunctionTrace"
   ]
 }

@@ -1,0 +1,10 @@
+{
+  "title": "Insights",
+  "description": "Query event and function data",
+  "pages": [
+    "ListInsightsEventSchemas",
+    "QueryInsights",
+    "QueryInsightsPrompt",
+    "ListInsightsTables"
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "title": "Experiments",
+  "description": "Inspect experiment variants and aggregates",
+  "pages": [
+    "ListExperiments2",
+    "GetExperiment",
+    "ListExperiments"
+  ]
+}

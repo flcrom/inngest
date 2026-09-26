@@ -28,6 +28,13 @@
       }
     }
   },
+  "/apps": {
+    "get": {
+      "200": {
+        "// TODO": "Add example data for get /apps 200"
+      }
+    }
+  },
   "/apps/{appId}": {
     "get": {
       "200": {
@@ -96,6 +103,20 @@
       }
     }
   },
+  "/apps/{appId}/functions/{functionId}/experiments": {
+    "get": {
+      "200": {
+        "// TODO": "Add example data for get /apps/{appId}/functions/{functionId}/experiments 200"
+      }
+    }
+  },
+  "/apps/{appId}/functions/{functionId}/experiments/{experimentId}": {
+    "get": {
+      "200": {
+        "// TODO": "Add example data for get /apps/{appId}/functions/{functionId}/experiments/{experimentId} 200"
+      }
+    }
+  },
   "/apps/{appId}/functions/{functionId}/invoke": {
     "post": {
       "201": {
@@ -127,6 +148,13 @@
       },
       "500": {
         "// TODO": "Add example data for post /apps/{appId}/functions/{functionId}/invoke 500"
+      }
+    }
+  },
+  "/apps/{appId}/functions/{functionId}/runs": {
+    "get": {
+      "200": {
+        "// TODO": "Add example data for get /apps/{appId}/functions/{functionId}/runs 200"
       }
     }
   },
@@ -397,6 +425,13 @@
       }
     }
   },
+  "/experiments": {
+    "get": {
+      "200": {
+        "// TODO": "Add example data for get /experiments 200"
+      }
+    }
+  },
   "/health": {
     "get": {
       "200": {
@@ -416,6 +451,88 @@
             "message": "Something went wrong"
           }
         ]
+      }
+    }
+  },
+  "/insights/events/schemas": {
+    "get": {
+      "200": {
+        "// TODO": "Add example data for get /insights/events/schemas 200"
+      },
+      "400": {
+        "// TODO": "Add example data for get /insights/events/schemas 400"
+      },
+      "401": {
+        "// TODO": "Add example data for get /insights/events/schemas 401"
+      },
+      "403": {
+        "// TODO": "Add example data for get /insights/events/schemas 403"
+      },
+      "500": {
+        "// TODO": "Add example data for get /insights/events/schemas 500"
+      }
+    }
+  },
+  "/insights/query": {
+    "post": {
+      "200": {
+        "// TODO": "Add example data for post /insights/query 200"
+      },
+      "400": {
+        "// TODO": "Add example data for post /insights/query 400"
+      },
+      "401": {
+        "// TODO": "Add example data for post /insights/query 401"
+      },
+      "403": {
+        "// TODO": "Add example data for post /insights/query 403"
+      },
+      "404": {
+        "// TODO": "Add example data for post /insights/query 404"
+      },
+      "422": {
+        "// TODO": "Add example data for post /insights/query 422"
+      },
+      "500": {
+        "// TODO": "Add example data for post /insights/query 500"
+      }
+    }
+  },
+  "/insights/query/prompt": {
+    "post": {
+      "200": {
+        "// TODO": "Add example data for post /insights/query/prompt 200"
+      },
+      "400": {
+        "// TODO": "Add example data for post /insights/query/prompt 400"
+      },
+      "401": {
+        "// TODO": "Add example data for post /insights/query/prompt 401"
+      },
+      "403": {
+        "// TODO": "Add example data for post /insights/query/prompt 403"
+      },
+      "422": {
+        "// TODO": "Add example data for post /insights/query/prompt 422"
+      },
+      "500": {
+        "// TODO": "Add example data for post /insights/query/prompt 500"
+      }
+    }
+  },
+  "/insights/tables": {
+    "get": {
+      "200": {
+        "// TODO": "Add example data for get /insights/tables 200"
+      },
+      "401": {
+        "// TODO": "Add example data for get /insights/tables 401"
+      },
+      "403": {
+        "// TODO": "Add example data for get /insights/tables 403"
+      },
+      "500": {
+        "// TODO": "Add example data for get /insights/tables 500"
       }
     }
   },
@@ -629,6 +746,13 @@
       }
     }
   },
+  "/runs": {
+    "get": {
+      "200": {
+        "// TODO": "Add example data for get /runs 200"
+      }
+    }
+  },
   "/runs/{runId}": {
     "get": {
       "200": {
@@ -636,10 +760,189 @@
       }
     }
   },
+  "/runs/{runId}/cancel": {
+    "post": {
+      "200": {
+        "// TODO": "Add example data for post /runs/{runId}/cancel 200"
+      }
+    }
+  },
+  "/runs/{runId}/rerun": {
+    "post": {
+      "200": {
+        "// TODO": "Add example data for post /runs/{runId}/rerun 200"
+      }
+    }
+  },
+  "/runs/{runId}/scores": {
+    "post": {
+      "200": {
+        "// TODO": "Add example data for post /runs/{runId}/scores 200"
+      }
+    }
+  },
   "/runs/{runId}/trace": {
     "get": {
       "200": {
         "// TODO": "Add example data for get /runs/{runId}/trace 200"
+      }
+    }
+  },
+  "/sandboxes": {
+    "get": {
+      "200": {
+        "// TODO": "Add example data for get /sandboxes 200"
+      }
+    },
+    "post": {
+      "200": {
+        "// TODO": "Add example data for post /sandboxes 200"
+      }
+    }
+  },
+  "/sandboxes/{sandboxId}": {
+    "delete": {
+      "200": {
+        "// TODO": "Add example data for delete /sandboxes/{sandboxId} 200"
+      }
+    },
+    "get": {
+      "200": {
+        "// TODO": "Add example data for get /sandboxes/{sandboxId} 200"
+      }
+    }
+  },
+  "/sandboxes/{sandboxId}/exec": {
+    "post": {
+      "200": {
+        "// TODO": "Add example data for post /sandboxes/{sandboxId}/exec 200"
+      }
+    }
+  },
+  "/sandboxes/{sandboxId}/files": {
+    "get": {
+      "200": {
+        "// TODO": "Add example data for get /sandboxes/{sandboxId}/files 200"
+      }
+    },
+    "put": {
+      "200": {
+        "// TODO": "Add example data for put /sandboxes/{sandboxId}/files 200"
+      }
+    }
+  },
+  "/sandboxes/{sandboxId}/logs": {
+    "get": {
+      "200": {
+        "// TODO": "Add example data for get /sandboxes/{sandboxId}/logs 200"
+      }
+    }
+  },
+  "/sandboxes/{sandboxId}/pause": {
+    "post": {
+      "200": {
+        "// TODO": "Add example data for post /sandboxes/{sandboxId}/pause 200"
+      }
+    }
+  },
+  "/sandboxes/{sandboxId}/processes": {
+    "get": {
+      "200": {
+        "// TODO": "Add example data for get /sandboxes/{sandboxId}/processes 200"
+      }
+    },
+    "post": {
+      "200": {
+        "// TODO": "Add example data for post /sandboxes/{sandboxId}/processes 200"
+      }
+    }
+  },
+  "/sandboxes/{sandboxId}/processes/{processId}": {
+    "get": {
+      "200": {
+        "// TODO": "Add example data for get /sandboxes/{sandboxId}/processes/{processId} 200"
+      }
+    }
+  },
+  "/sandboxes/{sandboxId}/processes/{processId}/output": {
+    "get": {
+      "200": {
+        "// TODO": "Add example data for get /sandboxes/{sandboxId}/processes/{processId}/output 200"
+      }
+    }
+  },
+  "/sandboxes/{sandboxId}/processes/{processId}/output/stream": {
+    "get": {
+      "200": {
+        "// TODO": "Add example data for get /sandboxes/{sandboxId}/processes/{processId}/output/stream 200"
+      }
+    }
+  },
+  "/sandboxes/{sandboxId}/processes/{processId}/signals": {
+    "post": {
+      "200": {
+        "// TODO": "Add example data for post /sandboxes/{sandboxId}/processes/{processId}/signals 200"
+      }
+    }
+  },
+  "/sandboxes/{sandboxId}/processes/{processId}/wait": {
+    "post": {
+      "200": {
+        "// TODO": "Add example data for post /sandboxes/{sandboxId}/processes/{processId}/wait 200"
+      }
+    }
+  },
+  "/sandboxes/{sandboxId}/resume": {
+    "post": {
+      "200": {
+        "// TODO": "Add example data for post /sandboxes/{sandboxId}/resume 200"
+      }
+    }
+  },
+  "/sandboxes/{sandboxId}/snapshots": {
+    "post": {
+      "200": {
+        "// TODO": "Add example data for post /sandboxes/{sandboxId}/snapshots 200"
+      }
+    }
+  },
+  "/sessions": {
+    "get": {
+      "200": {
+        "// TODO": "Add example data for get /sessions 200"
+      }
+    }
+  },
+  "/sessions/{sessionKey}": {
+    "get": {
+      "200": {
+        "// TODO": "Add example data for get /sessions/{sessionKey} 200"
+      }
+    }
+  },
+  "/sessions/{sessionKey}/{sessionId}/runs": {
+    "get": {
+      "200": {
+        "// TODO": "Add example data for get /sessions/{sessionKey}/{sessionId}/runs 200"
+      }
+    }
+  },
+  "/snapshots": {
+    "get": {
+      "200": {
+        "// TODO": "Add example data for get /snapshots 200"
+      }
+    }
+  },
+  "/snapshots/{snapshotId}": {
+    "delete": {
+      "200": {
+        "// TODO": "Add example data for delete /snapshots/{snapshotId} 200"
+      }
+    },
+    "get": {
+      "200": {
+        "// TODO": "Add example data for get /snapshots/{snapshotId} 200"
       }
     }
   }

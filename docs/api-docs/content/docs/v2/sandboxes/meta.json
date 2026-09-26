@@ -1,0 +1,27 @@
+{
+  "title": "Sandboxes",
+  "description": "Create and manage isolated compute sandboxes",
+  "pages": [
+    "ListSandboxes",
+    "CreateSandbox",
+    "GetSandbox",
+    "DestroySandbox",
+    "ExecSandbox",
+    "ReadSandboxFile",
+    "WriteSandboxFile",
+    "StreamSandboxLogs",
+    "PauseSandbox",
+    "ListSandboxProcesses",
+    "StartSandboxProcess",
+    "GetSandboxProcess",
+    "GetSandboxProcessOutput",
+    "StreamSandboxProcessOutput",
+    "SignalSandboxProcess",
+    "WaitSandboxProcess",
+    "ResumeSandbox",
+    "CreateSandboxSnapshot",
+    "ListSandboxSnapshots",
+    "GetSandboxSnapshot",
+    "DeleteSandboxSnapshot"
+  ]
+}

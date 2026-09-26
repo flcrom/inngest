@@ -1,0 +1,9 @@
+{
+  "title": "Sessions",
+  "description": "Inspect session-grouped runs",
+  "pages": [
+    "ListSessionKeys",
+    "ListSessions",
+    "ListSessionRuns"
+  ]
+}

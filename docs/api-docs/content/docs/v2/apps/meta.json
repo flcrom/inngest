@@ -2,6 +2,8 @@
   "title": "Apps",
   "description": "Sync and manage",
   "pages": [
+    "GetApps",
+    "GetApp",
     "SyncApp"
   ]
 }
